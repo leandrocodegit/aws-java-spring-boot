@@ -1,15 +1,20 @@
 package aws.demo.dynamo;
 
-public class Pessoa{
+import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbBean;
+import software.amazon.awssdk.enhanced.dynamodb.mapper.annotations.DynamoDbPartitionKey;
 
-    Integer id;
-    String nome;
+@DynamoDbBean
+public class Pessoa {
 
-    public Integer getId() {
+    private String id;
+    private String nome;
+
+    @DynamoDbPartitionKey
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

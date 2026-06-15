@@ -10,18 +10,20 @@ import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 @Configuration
 public class DynamoDbConfig {
 
-    @Bean
-    public DynamoDbClient dynamoDbClient() {
-        return DynamoDbClient.builder()
-                .region(Region.US_EAST_1)
-                .credentialsProvider(DefaultCredentialsProvider.create())
-                .build();
-    }
+        @Bean
+        public DynamoDbClient dynamoDbClient() {
+            return DynamoDbClient.builder()
+                    .region(Region.US_EAST_1)
+                    .credentialsProvider(DefaultCredentialsProvider.create())
+                    .build();
+        }
 
-    @Bean
-    public DynamoDbEnhancedClient dynamoDbEnhancedClient(DynamoDbClient client) {
-        return DynamoDbEnhancedClient.builder()
-                .dynamoDbClient(client)
-                .build();
-    }
+        @Bean
+        public DynamoDbEnhancedClient dynamoDbEnhancedClient(
+                DynamoDbClient client) {
+
+            return DynamoDbEnhancedClient.builder()
+                    .dynamoDbClient(client)
+                    .build();
+        }
 }

@@ -12,3 +12,8 @@ spring:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: false
+
+  cloud:
+    aws:
+      sqs:
+        queue-url: https://sqs.sa-east-1.amazonaws.com/174457625138/fileira

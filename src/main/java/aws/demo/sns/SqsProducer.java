@@ -7,15 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class SqsProducer {
 
-    private final SqsTemplate sqsTemplate;
 
-    public SqsProducer(SqsTemplate sqsTemplate) {
-        this.sqsTemplate = sqsTemplate;
-    }
-
-    public void enviar(String fila, Object mensagem) {
-        sqsTemplate.send(fila, mensagem);
-    }
 
     @SqsListener("fileira")
     public void receber(String mensagem) {

@@ -19,7 +19,7 @@ public class SQSController {
     public ResponseEntity<?> create(
             @RequestBody Menssagem pessoa
     ){
-        sqsProducer.enviar("fileira", pessoa);
+
         return ResponseEntity.ok().build();
     }
 }

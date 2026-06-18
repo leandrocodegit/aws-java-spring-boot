@@ -1,4 +1,4 @@
-server.port: 9055
+server.port: 8085
 
 spring:
   mvc.path match:
